@@ -9,11 +9,25 @@ import { useState } from "react";
 
 const inter = Space_Grotesk({ subsets: ["latin"], weight: ["500"] });
 
+export interface cardProps {
+  cardNumber: string;
+  setCardNumber: Function;
+  cardHolder: string;
+  setCardHolder: Function;
+  cardExpiryMM: string;
+  setCardExpiryMM: Function;
+  cardExpiryYY: string;
+  setCardExpiryYY: Function;
+  cardCvv: string;
+  setCardCvv: Function;
+}
+
 export default function Home() {
-  const [cardNumber, setCardNumber] = useState("0000 0000 0000 0000");
-  const [cardHolder, setCardHolder] = useState("Jane Appleseed");
-  const [cardExpiry, setCardExpiry] = useState("00/00");
-  const [cardCvv, setCardCvv] = useState("000");
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardHolder, setCardHolder] = useState("");
+  const [cardExpiryMM, setCardExpiryMM] = useState("");
+  const [cardExpiryYY, setCardExpiryYY] = useState("");
+  const [cardCvv, setCardCvv] = useState("");
 
   return (
     <main style={inter.style} className="min-h-full">
@@ -39,26 +53,42 @@ export default function Home() {
             <div className="absolute py-7 px-8">
               <Image src={cardLogo} alt="card logo" />
             </div>
-            <p className="absolute px-8 pb-[4.4rem] bottom-0 text-[1.75rem] leading-9 text-white tracking-[0.21rem]">
-              {cardNumber}
+            <p className="absolute px-8 bottom-[4.4rem] text-[1.75rem] leading-9 text-white tracking-[0.21rem]">
+              {cardNumber ? cardNumber : "0000 0000 0000 0000"}
             </p>
-            <div className="absolute flex  justify-between bottom-0 p-8 w-full uppercase">
+            <div className="absolute flex justify-between bottom-0 p-8 w-full uppercase">
               <p className="text-sm leading-[1.125rem]  text-white tracking-[0.125rem]">
-                {cardHolder}
+                {cardHolder ? cardHolder : "Jane Appleseed"}
               </p>
               <p className=" text-sm leading-[1.125rem] text-white tracking-[0.125rem]">
-                {cardExpiry}
+                {cardExpiryMM ? cardExpiryMM : "00"}/
+                {cardExpiryYY ? cardExpiryYY : "00"}
               </p>
             </div>
-
             <Image src={cardFront} alt="card front" width={447} height={245} />
           </div>
           <div className="ml-[17%] relative">
+            <p className="absolute text-white top-[6.9rem] right-[3.5rem] text-sm leading-[1.125rem] trackiing-[0.125rem]">
+              {cardCvv ? cardCvv : "000"}
+            </p>
             <Image src={cardBack} alt="card back" width={447} height={245} />
           </div>
         </div>
         <div className="col-start-4 col-end-5 flex justify-center items-center">
-          <CardForm />
+          <CardForm
+            {...{
+              cardNumber,
+              setCardNumber,
+              cardHolder,
+              setCardHolder,
+              cardExpiryMM,
+              setCardExpiryMM,
+              cardExpiryYY,
+              setCardExpiryYY,
+              cardCvv,
+              setCardCvv,
+            }}
+          />
         </div>
       </div>
     </main>
