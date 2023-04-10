@@ -99,12 +99,16 @@ export default function CardForm({
               <div className="block">
                 Exp. Date (MM/YY)
                 <input
-                  className=""
+                  value={cardExpiryMM}
+                  onChange={handleCardExpiryEnterMM}
+                  className="rounded-lg"
                   type="text"
                   id="expiration-date-mm"
                   placeholder="MM"
                 />
                 <input
+                  value={cardExpiryYY}
+                  onChange={handleCardExpiryEnterYY}
                   className=""
                   type="text"
                   id="expiration-date-yy"
@@ -115,7 +119,11 @@ export default function CardForm({
           </div>
         </div>
         <label htmlFor=""></label>
-        <input type="submit" className="" />
+        <input
+          type="submit"
+          value="Confirm"
+          className="text-white w-full cursor-pointer  py-[0.9375rem] text-lg rounded-lg bg-[#21092f] hover:bg-slate-700"
+        />
       </form>
     </div>
   );
