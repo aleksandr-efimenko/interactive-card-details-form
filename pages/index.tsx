@@ -10,7 +10,7 @@ const inter = Space_Grotesk({ subsets: ["latin"], weight: ["500"] });
 export default function Home() {
   return (
     <main style={inter.style} className="min-h-full">
-      <div className=" top-0 left-0 absolute w-1/3 min-h-full z-0">
+      <div className=" top-0 left-0 absolute w-1/3 min-h-full z-0 ">
         <Image
           src={bgMain}
           alt="background"
@@ -22,16 +22,17 @@ export default function Home() {
           }}
         />
       </div>
-      <div className=" min-h-full grid grid-cols-6 z-10 relative">
-        <div className="flex flex-col col-start-2 col-end-3">
-          <div className="">
+      <div className=" min-h-screen grid grid-cols-5 z-10 relative" 
+      style={{gridTemplateColumns:'11.4% 37.6% 8.8% 26.5% auto'}}>
+        <div className="flex flex-col justify-center gap-9 col-start-2 col-end-3">
+          <div className="mr-[17%]">
             <Image src={cardFront} alt="card front" />
           </div>
-          <div>
+          <div className="ml-[17%] ">
             <Image src={cardBack} alt="card back" />
           </div>
         </div>
-        <div className="col-start-3 col-end-7 flex justify-center items-center">
+        <div className="col-start-4 col-end-5 flex justify-center items-center">
           <CardForm />
         </div>
       </div>
