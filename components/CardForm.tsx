@@ -12,6 +12,7 @@ export default function CardForm({
   setCardExpiryYY,
   cardCvv,
   setCardCvv,
+  toggleCardSubmitted
 }: cardProps) {
   const [cardNumberError, setCardNumberError] = React.useState(false);
   const [cardHolderError, setCardHolderError] = React.useState(false);
@@ -20,6 +21,7 @@ export default function CardForm({
   const [cardCvvError, setCardCvvError] = React.useState(false);
 
   const handleSumbit = (e: React.FormEvent<HTMLFormElement>) => {
+    toggleCardSubmitted();
     e.preventDefault();
   };
 
@@ -41,12 +43,12 @@ export default function CardForm({
     return true;
   };
 
+  // This function is used to check if the card number is valid
   function luhnCheck(cardNumber: string): boolean {
     let sum = 0;
     let digit;
     let i;
     let addend;
-    let symbol;
 
     for (i = 0; i < cardNumber.length; i++) {
       digit = parseInt(cardNumber.charAt(i));
@@ -181,7 +183,7 @@ export default function CardForm({
         <input
           type="submit"
           value="Confirm"
-          className="text-white w-full cursor-pointer py-3 mt-10 text-lg rounded-lg bg-[#21092f] hover:bg-slate-700"
+          className="dark-button"
         />
       </form>
     </div>

@@ -23,6 +23,12 @@
   .card-input:focus {
     @apply border-transparent outline-none;
   }
+  .dark-button {
+    @apply text-white w-full cursor-pointer py-3 mt-10 text-lg rounded-lg bg-[#21092f]
+     hover:bg-slate-700
+     active:bg-slate-800;
+  }
+
 }
 
 /* @media (prefers-color-scheme: dark) {

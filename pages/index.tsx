@@ -6,6 +6,7 @@ import cardFront from "@/public/images/bg-card-front.png";
 import cardBack from "@/public/images/bg-card-back.png";
 import cardLogo from "@/public/images/card-logo.svg";
 import { useState } from "react";
+import CardSubmitted from "@/components/CardSubmitted";
 
 const inter = Space_Grotesk({ subsets: ["latin"], weight: ["500"] });
 
@@ -20,6 +21,7 @@ export interface cardProps {
   setCardExpiryYY: Function;
   cardCvv: string;
   setCardCvv: Function;
+  toggleCardSubmitted: Function;
 }
 
 export default function Home() {
@@ -28,6 +30,8 @@ export default function Home() {
   const [cardExpiryMM, setCardExpiryMM] = useState("");
   const [cardExpiryYY, setCardExpiryYY] = useState("");
   const [cardCvv, setCardCvv] = useState("");
+  const [isCardSubmitted, setIsCardSubmitted] = useState(false);
+  const toggleCardSubmitted = () => setIsCardSubmitted(!isCardSubmitted);
 
   return (
     <main style={inter.style} className="min-h-full">
@@ -75,6 +79,7 @@ export default function Home() {
           </div>
         </div>
         <div className="col-start-4 col-end-5 flex justify-center items-center">
+         { isCardSubmitted ? <CardSubmitted toggleCardSubmitted={toggleCardSubmitted} /> :
           <CardForm
             {...{
               cardNumber,
@@ -87,8 +92,10 @@ export default function Home() {
               setCardExpiryYY,
               cardCvv,
               setCardCvv,
+              toggleCardSubmitted,
             }}
-          />
+            /> 
+          }
         </div>
       </div>
     </main>
