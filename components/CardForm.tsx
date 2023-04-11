@@ -66,42 +66,45 @@ export default function CardForm({
   };
 
   return (
-    <div className="">
+    <div className=" max-w-sm">
       <form className="">
-        <label className=" block" htmlFor="cardholder-name">
-          Cardholder Name
-          <input
-            value={cardHolder}
-            onChange={handleCardHolderEnter}
-            className="block"
-            type="text"
-            id="cardholder-name"
-            placeholder="e.g. Jane Appleseed"
-          />
-          {cardHolderError && (
-            <p className="text-red-500">Cardholder name is required</p>
-          )}
-        </label>
-        <label className="block" htmlFor="card-number">
-          Card Number
-          <input
-            value={cardNumber}
-            onChange={handleCardNumberEnter}
-            className="block"
-            type="text"
-            id="card-number"
-            placeholder="e.g. 1234 5678 9123 0000"
-          />
-        </label>
-        <div className="flex">
-          <div className="flex-1">
-            <label className="block" htmlFor="expiration-date">
-              <div className="block">
-                Exp. Date (MM/YY)
+        <div className="flex flex-col gap-[1.625rem]">
+          <label
+            className="block  card-label"
+            htmlFor="cardholder-name"
+          >
+            Cardholder Name
+            <input
+              value={cardHolder}
+              onChange={handleCardHolderEnter}
+              className="block w-full card-input"
+              type="text"
+              id="cardholder-name"
+              placeholder="e.g. Jane Appleseed"
+            />
+            {cardHolderError && (
+              <p className="text-red-500">Cardholder name is required</p>
+            )}
+          </label>
+          <label className="block card-label" htmlFor="card-number">
+            Card Number
+            <input
+              value={cardNumber}
+              onChange={handleCardNumberEnter}
+              className="block w-full card-input"
+              type="text"
+              id="card-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+          </label>
+          <div className="flex w-1/2">
+            <label className="block card-label" htmlFor="expiration-date">
+              Exp. Date (MM/YY)
+              <div className="flex">
                 <input
                   value={cardExpiryMM}
                   onChange={handleCardExpiryEnterMM}
-                  className="rounded-lg"
+                  className="card-input"
                   type="text"
                   id="expiration-date-mm"
                   placeholder="MM"
@@ -109,20 +112,30 @@ export default function CardForm({
                 <input
                   value={cardExpiryYY}
                   onChange={handleCardExpiryEnterYY}
-                  className=""
+                  className="card-input"
                   type="text"
                   id="expiration-date-yy"
                   placeholder="YY"
                 />
               </div>
             </label>
+            <label htmlFor="cvv" className="card-label">
+              CVC
+              <input
+                type="text"
+                id="cvv"
+                className="card-input"
+                placeholder="e.g 123"
+                value={cardCvv}
+                onChange={handleCardCvvEnter}
+              />
+            </label>
           </div>
         </div>
-        <label htmlFor=""></label>
         <input
           type="submit"
           value="Confirm"
-          className="text-white w-full cursor-pointer  py-[0.9375rem] text-lg rounded-lg bg-[#21092f] hover:bg-slate-700"
+          className="text-white w-full cursor-pointer py-3 mt-10 text-lg rounded-lg bg-[#21092f] hover:bg-slate-700"
         />
       </form>
     </div>
