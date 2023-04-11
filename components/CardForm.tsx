@@ -1,5 +1,6 @@
 import { cardProps } from "@/pages";
 import React from "react";
+import SpinnerIcon from "./SpinnerIcon";
 
 export default function CardForm({
   cardNumber,
@@ -12,7 +13,7 @@ export default function CardForm({
   setCardExpiryYY,
   cardCvv,
   setCardCvv,
-  toggleCardSubmitted
+  toggleCardSubmitted,
 }: cardProps) {
   const [cardNumberError, setCardNumberError] = React.useState(false);
   const [cardHolderError, setCardHolderError] = React.useState(false);
@@ -20,9 +21,14 @@ export default function CardForm({
   const [cardExpiryYYError, setCardExpiryYYError] = React.useState(false);
   const [cardCvvError, setCardCvvError] = React.useState(false);
 
+  const [isLoading, setIsLoading] = React.useState(false);
   const handleSumbit = (e: React.FormEvent<HTMLFormElement>) => {
-    toggleCardSubmitted();
     e.preventDefault();
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      toggleCardSubmitted();
+    }, 1000);
   };
 
   const creditCardNumberValidation = (cardNumber: string) => {
@@ -180,11 +186,19 @@ export default function CardForm({
             </label>
           </div>
         </div>
-        <input
+        <button
           type="submit"
-          value="Confirm"
-          className="dark-button"
-        />
+          disabled={isLoading}
+          className="dark-button disabled:cursor-not-allowed disabled:bg-slate-400"
+        >
+          {isLoading ? (
+            <div className="flex justify-center items-center">
+              <SpinnerIcon />
+            </div>
+          ) : (
+            "Confirm"
+          )}
+        </button>
       </form>
     </div>
   );
