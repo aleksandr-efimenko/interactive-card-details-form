@@ -12,6 +12,9 @@ module.exports = {
         'light-grayish-violet': 'hsl(270, 3%, 87%)',
         'dark-grayish-violet': 'hsl(279, 6%, 55%)',
         'very-dark-violet': 'hsl(278, 68%, 11%)',
+        'light-blue': 'hsl(249, 99%, 64%)',
+        'light-violet': 'hsl(278, 94%, 30%)',
+        'red': 'hsl(0, 100%, 66%)',
       },
         backgroundImage: {
           'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

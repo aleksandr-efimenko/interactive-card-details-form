@@ -2,28 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* --foreground-rgb: 0, 0, 0; */
-  /* --background-start-rgb: 214, 219, 220; */
-  /* --background-end-rgb: 255, 255, 255; */
-}
-
 @layer components {
   .card-label {
     @apply text-very-dark-violet uppercase tracking-[0.125em]
     leading-[0.925rem] text-xs;
   }
+  .input-container-bd-gradient {
+    @apply rounded-[9px] bg-transparent  mt-[9px] p-[1px];
+  }
+  .input-container-bd-gradient:focus-within {
+    @apply bg-gradient-to-b   from-light-blue to-light-violet;
+  }
   .card-input {
-    @apply  border rounded-lg 
+    @apply border rounded-lg 
     placeholder-very-dark-violet 
     placeholder-opacity-25
     h-[45px] py-[11px] px-4
-    mt-[9px]
-    text-lg leading-[1.44rem]
-    ;
+    text-lg leading-[1.44rem];
   }
   .card-input:focus {
-    @apply outline-none;
+    @apply border-transparent outline-none;
   }
 }
 
