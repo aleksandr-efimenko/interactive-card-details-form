@@ -19,6 +19,15 @@ export default function CardForm({
   const [cardExpiryYYError, setCardExpiryYYError] = React.useState(false);
   const [cardCvvError, setCardCvvError] = React.useState(false);
 
+  const handleSumbit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (cardNumberError || cardHolderError || cardExpiryMMError || cardExpiryYYError || cardCvvError) {
+      alert("Please check your inputs");
+    } else {
+      alert("Success!");
+    }
+  };
+
   const handleCardNumberEnter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     let cardNumber = value;
@@ -66,8 +75,8 @@ export default function CardForm({
   };
 
   return (
-    <div className=" max-w-sm">
-      <form className="">
+    <div className="max-w-sm">
+      <form onSubmit={handleSumbit}>
         <div className="flex flex-col gap-[1.625rem]">
           <label
             className="block  card-label"
@@ -97,14 +106,14 @@ export default function CardForm({
               placeholder="e.g. 1234 5678 9123 0000"
             />
           </label>
-          <div className="flex w-1/2">
-            <label className="block card-label" htmlFor="expiration-date">
+          <div className="flex w-full gap-[1.25rem]">
+            <label className="block card-label" htmlFor="expiration-date-mm">
               Exp. Date (MM/YY)
-              <div className="flex">
+              <div className="flex gap-[0.625rem]">
                 <input
                   value={cardExpiryMM}
                   onChange={handleCardExpiryEnterMM}
-                  className="card-input"
+                  className="card-input max-w-[5rem]"
                   type="text"
                   id="expiration-date-mm"
                   placeholder="MM"
@@ -112,7 +121,7 @@ export default function CardForm({
                 <input
                   value={cardExpiryYY}
                   onChange={handleCardExpiryEnterYY}
-                  className="card-input"
+                  className="card-input max-w-[5rem]"
                   type="text"
                   id="expiration-date-yy"
                   placeholder="YY"
@@ -124,7 +133,7 @@ export default function CardForm({
               <input
                 type="text"
                 id="cvv"
-                className="card-input"
+                className="block card-input max-w-[12rem]"
                 placeholder="e.g 123"
                 value={cardCvv}
                 onChange={handleCardCvvEnter}
