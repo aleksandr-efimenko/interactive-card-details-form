@@ -20,6 +20,7 @@ export default function CardSubmitted({
         We’ve added your card details
       </p>
       <button
+        autoFocus
         className="dark-button w-full"
         onClick={() => toggleCardSubmitted()}
       >

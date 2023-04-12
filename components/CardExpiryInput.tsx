@@ -20,6 +20,10 @@ export function CardExpiryInput({
   const handleCardExpiryEnterMM = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const cardExpiryMM = parseInt(value, 10);
+    if (!cardExpiryMM) {
+      setCardExpiryMM("");
+      return;
+    }
     //Make input only 2 characters long with leading 0
     let month = String(cardExpiryMM).padStart(2, "0");
     // limit to 2 digits
@@ -34,6 +38,10 @@ export function CardExpiryInput({
   const handleCardExpiryEnterYY = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const cardExpiryYY = parseInt(value, 10);
+    if (!cardExpiryYY) {
+      setCardExpiryYY("");
+      return;
+    }
     //Make input only 2 characters long with leading 0
     let year = String(cardExpiryYY).padStart(2, "0");
     // limit to 2 digits

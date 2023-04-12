@@ -76,17 +76,27 @@ export default function CardForm({
       setCardExpiryYYError("");
     }
 
-    //check card expiry
-    const verifyCardExpiryDate = checkCardExpiryDate(
-      cardExpiryMM,
-      cardExpiryYY
-    );
-    if (verifyCardExpiryDate) {
-      setCardExpiryMM(verifyCardExpiryDate);
-      setCardExpiryYY(verifyCardExpiryDate);
-      errors = true;
-    } else {
-      setCardExpiryResultError("");
+    //set result error message
+    if (verifyCardExpiryMM) {
+      setCardExpiryResultError(verifyCardExpiryMM);
+    } else if (verifyCardExpiryYY) {
+      setCardExpiryResultError(verifyCardExpiryYY);
+    } else setCardExpiryResultError("");
+
+    if (!verifyCardExpiryMM && !verifyCardExpiryYY) {
+      //check card expiry
+      const verifyCardExpiryDate = checkCardExpiryDate(
+        cardExpiryMM,
+        cardExpiryYY
+      );
+      if (verifyCardExpiryDate) {
+        setCardExpiryMMError(verifyCardExpiryDate);
+        setCardExpiryYYError(verifyCardExpiryDate);
+        setCardExpiryResultError(verifyCardExpiryDate);
+        errors = true;
+      } else {
+        setCardExpiryResultError("");
+      }
     }
 
     // check card cvv
@@ -102,25 +112,20 @@ export default function CardForm({
       return;
     }
     setIsLoading(true);
+    resetForm();
     setTimeout(() => {
       setIsLoading(false);
       toggleCardSubmitted();
     }, 1000);
   };
 
-  // set result error for card expiry
-  useEffect(() => {
-    if (cardExpiryMMError) {
-      setCardExpiryResultError(cardExpiryMMError);
-      return;
-    }
-    if (cardExpiryYYError) {
-      setCardExpiryResultError(cardExpiryYYError);
-      return;
-    }
-
-    setCardExpiryResultError("");
-  }, [cardExpiryMMError, cardExpiryYYError]);
+  const resetForm = () => {
+    setCardHolder("");
+    setCardNumber("");
+    setCardExpiryMM("");
+    setCardExpiryYY("");
+    setCardCvv("");
+  };
 
   return (
     <div className="max-w-sm">
