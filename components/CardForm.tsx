@@ -113,10 +113,10 @@ export default function CardForm({
     }
     setIsLoading(true);
     setTimeout(() => {
+      resetForm();
       setIsLoading(false);
       toggleCardSubmitted();
     }, 1000);
-    resetForm();
   };
 
   const resetForm = () => {
