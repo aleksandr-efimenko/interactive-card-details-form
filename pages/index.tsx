@@ -50,7 +50,7 @@ export default function Home() {
       </div>
       <div
         className=" min-h-screen grid grid-cols-5 z-10 relative"
-        style={{ gridTemplateColumns: "11.4% 33.8rem 8.8% auto 10%" }}
+        style={{ gridTemplateColumns: "minmax(1rem ,11.4%) 33.8rem minmax(1rem, 8.8%) auto minmax(1rem,10%)" }}
       >
         <div className="flex flex-col justify-center gap-9 col-start-2 col-end-3">
           <div className="mr-[17%] relative">
