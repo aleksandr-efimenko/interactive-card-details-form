@@ -8,27 +8,34 @@
     leading-[0.925rem] text-xs;
   }
   .input-container-bd-gradient {
-    @apply rounded-[9px] bg-transparent  mt-[9px] p-[1px];
+    @apply rounded-[9px] bg-light-grayish-violet mt-[9px] p-[1px];
+  }
+  .input-container-bd-gradient.wrong-input {
+    @apply bg-red;
   }
   .input-container-bd-gradient:focus-within {
-    @apply bg-gradient-to-b   from-light-blue to-light-violet;
+    @apply bg-gradient-to-b from-light-blue to-light-violet;
   }
+  .input-container-bd-gradient.wrong-input:focus-within {
+    @apply bg-gradient-to-b from-red to-light-violet;
+  }
+
   .card-input {
-    @apply border rounded-lg 
+    @apply rounded-lg 
     placeholder-very-dark-violet 
     placeholder-opacity-25
     h-[45px] py-[11px] px-4
     text-lg leading-[1.44rem];
   }
   .card-input:focus {
-    @apply border-transparent outline-none;
+    @apply outline-none;
   }
   .dark-button {
-    @apply text-white w-full cursor-pointer py-3 mt-10 text-lg rounded-lg bg-[#21092f]
+    @apply text-white w-full cursor-pointer h-[3.25rem] mt-10
+     text-lg rounded-lg bg-[#21092f]
      hover:bg-slate-700
      active:bg-slate-800;
   }
-
 }
 
 /* @media (prefers-color-scheme: dark) {
