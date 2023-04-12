@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CardHolderNameInput({
+export function CardHolderNameInput({
   cardHolder,
   setCardHolder,
   cardHolderError,
@@ -12,7 +12,7 @@ export default function CardHolderNameInput({
   const handleCardHolderEnter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const cardHolder = value;
-    // limit to 50 characters
+    // limit to 30 characters
     setCardHolder(cardHolder.slice(0, 30));
   };
 
@@ -21,10 +21,9 @@ export default function CardHolderNameInput({
       <label className="block card-label" htmlFor="cardholder-name">
         Cardholder Name
         <div
-          className={[
-            "input-container-bd-gradient",
-            cardHolderError && "wrong-input",
-          ].join(" ")}
+          className={`input-container-bd-gradient ${
+            cardHolderError ? "wrong-input" : ""
+          }`}
         >
           <input
             value={cardHolder}
@@ -37,7 +36,7 @@ export default function CardHolderNameInput({
         </div>
       </label>
       {cardHolderError && (
-        <p className="mt-2 text-xs text-red">{cardHolderError}</p>
+        <p className="mt-2 text-xs text-red" role="alert" aria-live="assertive">{cardHolderError}</p>
       )}
     </div>
   );

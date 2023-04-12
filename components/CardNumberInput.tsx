@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CardNumberInput({
+export function CardNumberInput({
   cardNumber,
   setCardNumber,
   cardNumberError,
@@ -28,10 +28,9 @@ export default function CardNumberInput({
       <label className="block card-label" htmlFor="card-number">
         Card Number
         <div
-          className={[
-            "input-container-bd-gradient",
-            cardNumberError && "wrong-input",
-          ].join(" ")}
+          className={`input-container-bd-gradient ${
+            cardNumberError ? "wrong-input" : ""
+          }`}
         >
           <input
             value={cardNumber}
@@ -44,7 +43,9 @@ export default function CardNumberInput({
         </div>
       </label>
       {cardNumberError && (
-        <p className="mt-2 text-xs text-red">{cardNumberError}</p>
+        <p className="mt-2 text-xs text-red" role="alert" aria-live="assertive">
+          {cardNumberError}
+        </p>
       )}
     </div>
   );

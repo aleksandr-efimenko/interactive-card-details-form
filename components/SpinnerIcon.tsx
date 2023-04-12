@@ -1,6 +1,6 @@
 import React from "react";
 
-const SpinnerIcon = () => {
+export const SpinnerIcon = () => {
   return (
     <svg className="animate-spin h-5 w-5 " viewBox="0 0 24 24">
       <circle
@@ -20,4 +20,3 @@ const SpinnerIcon = () => {
   );
 };
 
-export default SpinnerIcon;
