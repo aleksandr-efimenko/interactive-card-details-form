@@ -8,7 +8,10 @@
     leading-[0.925rem] text-xs;
   }
   .input-container-bd-gradient {
-    @apply rounded-[9px] bg-light-grayish-violet mt-[9px] p-[1px];
+    @apply rounded-[0.56rem] bg-light-grayish-violet mt-[0.56rem] 
+    p-[0.0625rem]
+    min-h-[2.8rem]
+    ;
   }
   .input-container-bd-gradient.wrong-input {
     @apply bg-red;
@@ -24,7 +27,8 @@
     @apply rounded-lg 
     placeholder-very-dark-violet 
     placeholder-opacity-25
-    h-[45px] py-[11px] px-4
+    h-full w-full py-[0.685rem] px-4
+
     text-lg leading-[1.44rem];
   }
   .card-input:focus {
