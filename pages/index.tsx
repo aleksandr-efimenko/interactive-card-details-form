@@ -56,7 +56,7 @@ export default function Home() {
         items-center justify-end mt-8 gap-0 
         lg:gap-9 lg:col-start-2 lg:col-end-3 drop-shadow-xx"
         >
-          <div className="z-20 absolute mr-[57px] lg:mr-[17%] top-[88px] lg:top-0 w-[286px] h-[157px] lg:w-[447px] lg:h-[245px]">
+          <div className="z-20 lg:relative absolute mr-[57px] lg:mr-[17%] top-[88px] lg:top-0 w-[286px] h-[157px] lg:w-[447px] lg:h-[245px]">
             <Image src={cardFront} alt="card front" fill />
             <div
               className="relative
