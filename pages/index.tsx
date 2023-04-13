@@ -34,7 +34,7 @@ export default function Home() {
   const toggleCardSubmitted = () => setIsCardSubmitted(!isCardSubmitted);
 
   return (
-    <main style={inter.style} className="min-h-full">
+    <main style={inter.style} className="min-h-screen">
       {/* Background container */}
       <div className=" top-0 left-0 absolute w-full h-60 lg:w-1/3 lg:min-h-full z-0 ">
         <Image
