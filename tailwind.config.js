@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        "grid-card-template": "minmax(1rem, 11.4%) 33.8rem minmax(1rem, 8.8%) auto minmax(1rem, 10%)"
+      },
+      gridTemplateRows: {
+        "mobile-grid-template" : "331px auto",
+      },
       colors: {
         'light-gray': 'hsl(278, 3%, 87%)',
         'light-grayish-violet': 'hsl(270, 3%, 87%)',
@@ -16,13 +22,13 @@ module.exports = {
         'light-violet': 'hsl(278, 94%, 30%)',
         'red': 'hsl(0, 100%, 66%)',
       },
-        backgroundImage: {
-          'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-          'gradient-conic':
-            'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
-    plugins: [],
-  }
+  },
+  plugins: [],
+}
 

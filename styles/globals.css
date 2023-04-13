@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+
   .card-label {
     @apply text-very-dark-violet uppercase tracking-[0.125em]
     leading-[0.925rem] text-xs;
