@@ -128,7 +128,7 @@ export default function CardForm({
   };
 
   return (
-    <div className=" mx-6 lg:min-w-[24rem] lg:mx-0">
+    <div className="max-w-[20.5rem] w-full mx-6 lg:min-w-[24rem] lg:mx-0">
       <form onSubmit={handleSumbit}>
         <div className="flex flex-col lg:gap-[1.625rem] gap-5">
           <CardHolderNameInput
