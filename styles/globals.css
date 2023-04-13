@@ -36,7 +36,8 @@
     @apply outline-none;
   }
   .dark-button {
-    @apply text-white w-full cursor-pointer h-[3.25rem] mt-10
+    @apply text-white w-full cursor-pointer 
+      h-[3.25rem] lg:mt-10 mt-7
      text-lg rounded-lg bg-[#21092f]
      hover:bg-slate-700
      active:bg-slate-800;

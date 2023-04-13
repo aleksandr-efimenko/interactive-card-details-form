@@ -54,7 +54,7 @@ export default function Home() {
           className="flex flex-col-reverse 
         lg:mt-0 lg:flex-col lg:justify-center 
         items-center justify-end mt-8 gap-0 
-        lg:gap-9 lg:col-start-2 lg:col-end-3"
+        lg:gap-9 lg:col-start-2 lg:col-end-3 drop-shadow-xx"
         >
           <div className="z-20 relative mr-[57px] lg:mr-[17%] top-[-68px] lg:top-0 w-[286px] h-[157px] lg:w-[447px] lg:h-[245px]">
             <Image src={cardFront} alt="card front" fill />
@@ -72,11 +72,14 @@ export default function Home() {
             >
               {cardNumber ? cardNumber : "0000 0000 0000 0000"}
             </p>
-            <div className="absolute flex justify-between bottom-0 p-8 w-full uppercase">
-              <p className="text-sm leading-[1.125rem]  text-white tracking-[0.125rem]">
+            <div className="absolute flex justify-between w-full uppercase text-white 
+            lg:bottom-0 lg:p-8 lg:text-sm lg:leading-[1.125rem] lg:tracking-[0.125rem]
+             text-[9px] bottom-5 px-[19px] leading-3 tracking-[0.08rem]
+            ">
+              <p >
                 {cardHolder ? cardHolder : "Jane Appleseed"}
               </p>
-              <p className=" text-sm leading-[1.125rem] text-white tracking-[0.125rem]">
+              <p >
                 {cardExpiryMM ? cardExpiryMM : "00"}/
                 {cardExpiryYY ? cardExpiryYY : "00"}
               </p>

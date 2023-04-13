@@ -11,7 +11,7 @@ export default function CardSubmitted({
     <div className=" min-w-[24rem]">
       <Image src={iconCompete} alt="icon complete" className=" mb-9 mx-auto" />
       <h1
-        className=" uppercase text-center text-very-dark-violet text-[1.75rem] leading-9 
+        className="uppercase text-center text-very-dark-violet text-[1.75rem] leading-9 
         tracking-[0.21rem] mb-4"
       >
         Thank you!
@@ -21,7 +21,7 @@ export default function CardSubmitted({
       </p>
       <button
         autoFocus
-        className="dark-button w-full"
+        className="dark-button w-full mt-12"
         onClick={() => toggleCardSubmitted()}
       >
         Continue

@@ -53,7 +53,7 @@ export function CardExpiryInput({
       <label className="block card-label" htmlFor="expiration-date-mm">
         Exp. Date (MM/YY)
       </label>
-      <div className="flex gap-[0.625rem]">
+      <div className="flex lg:gap-[0.625rem] gap-2">
         <div
           className={`input-container-bd-gradient ${
             cardExpiryMMError ? "wrong-input" : ""

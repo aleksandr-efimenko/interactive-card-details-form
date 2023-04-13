@@ -128,9 +128,9 @@ export default function CardForm({
   };
 
   return (
-    <div className=" min-w-[24rem]">
+    <div className=" mx-6 lg:min-w-[24rem] lg:mx-0">
       <form onSubmit={handleSumbit}>
-        <div className="flex flex-col gap-[1.625rem]">
+        <div className="flex flex-col lg:gap-[1.625rem] gap-5">
           <CardHolderNameInput
             cardHolder={cardHolder}
             setCardHolder={setCardHolder}
@@ -141,7 +141,7 @@ export default function CardForm({
             setCardNumber={setCardNumber}
             cardNumberError={cardNumberError}
           />
-          <div className="flex w-full gap-[1.25rem]">
+          <div className="flex w-full items-end lg:gap-[1.25rem] gap-[11px]">
             <CardExpiryInput
               cardExpiryMM={cardExpiryMM}
               setCardExpiryMM={setCardExpiryMM}
