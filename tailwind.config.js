@@ -11,7 +11,7 @@ module.exports = {
         "grid-card-template": "minmax(1rem, 11.4%) 33.8rem minmax(1rem, 8.8%) auto minmax(1rem, 10%)"
       },
       gridTemplateRows: {
-        "mobile-grid-template" : "331px auto",
+        "mobile-grid-template" : "360px auto",
       },
       colors: {
         'light-gray': 'hsl(278, 3%, 87%)',

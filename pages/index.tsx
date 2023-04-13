@@ -50,13 +50,26 @@ export default function Home() {
       </div>
 
       <div className="min-h-screen grid grid-cols-1 grid-rows-mobile-grid-template lg:grid-rows-1 lg:grid-cols-grid-card-template z-10 relative">
-        <div className="flex flex-col-reverse lg:mt-0 lg:flex-col lg:justify-center items-center justify-end mt-8 gap-0 lg:gap-9 lg:col-start-2 lg:col-end-3">
-          <div className="relative mr-[57px] lg:mr-[17%] top-[-68px] lg:top-0 w-[286px] h-[157px] lg:w-[447px] lg:h-[245px]">
-            <Image src={cardFront} alt="card front" fill /> 
-            <div className="absolute py-7 px-8">
-              <Image src={cardLogo} alt="card logo" />
+        <div
+          className="flex flex-col-reverse 
+        lg:mt-0 lg:flex-col lg:justify-center 
+        items-center justify-end mt-8 gap-0 
+        lg:gap-9 lg:col-start-2 lg:col-end-3"
+        >
+          <div className="z-20 relative mr-[57px] lg:mr-[17%] top-[-68px] lg:top-0 w-[286px] h-[157px] lg:w-[447px] lg:h-[245px]">
+            <Image src={cardFront} alt="card front" fill />
+            <div
+              className="relative
+              w-[54px] h-[30px] top-[17px] left-[19px]
+              lg:w-[84px] lg:h-[47px] lg:top-7 lg:left-8 "
+            >
+              <Image src={cardLogo} alt="card logo" fill />
             </div>
-            <p className="absolute w-full px-8 bottom-[4.4rem] text-[1.75rem] leading-9 text-white tracking-[0.21rem]">
+            <p
+              className="absolute w-full text-white
+              lg:px-8 lg:bottom-[4.4rem] lg:text-[1.75rem] lg:leading-9 lg:tracking-[0.21rem] 
+              px-[19px] bottom-12 text-lg leading-6 tracking-[0.125rem]"
+            >
               {cardNumber ? cardNumber : "0000 0000 0000 0000"}
             </p>
             <div className="absolute flex justify-between bottom-0 p-8 w-full uppercase">
@@ -69,14 +82,14 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="ml-[57px] lg:ml-[17%] relative w-[286px] h-[157px] lg:w-[447px] lg:h-[245px]">
+          <div className=" z-10 ml-[57px] lg:ml-[17%] relative w-[286px] h-[157px] lg:w-[447px] lg:h-[245px]">
             <Image src={cardBack} alt="card back" fill />
-            <p className="absolute text-white top-[6.9rem] right-[3.5rem] text-sm leading-[1.125rem] trackiing-[0.125rem]">
+            <p className="absolute text-white right-8 top-[72px] text-[9px] lg:top-[6.9rem]  lg:right-[3.5rem] lg:text-sm lg:leading-[1.125rem] lg:trackiing-[0.125rem]">
               {cardCvv ? cardCvv : "000"}
             </p>
           </div>
         </div>
-        <div className="flex justify-center items-center lg:col-start-4 lg:col-end-5 ">
+        <div className="flex items-start justify-center lg:items-center lg:col-start-4 lg:col-end-5 ">
           {isCardSubmitted ? (
             <CardSubmitted toggleCardSubmitted={toggleCardSubmitted} />
           ) : (
