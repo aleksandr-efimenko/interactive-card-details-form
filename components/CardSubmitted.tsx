@@ -8,7 +8,7 @@ export default function CardSubmitted({
   toggleCardSubmitted: Function;
 }) {
   return (
-    <div className=" min-w-[24rem]">
+    <div className="mx-6 w-full lg:min-w-[24rem] lg:mx-0">
       <Image src={iconCompete} alt="icon complete" className=" mb-9 mx-auto" />
       <h1
         className="uppercase text-center text-very-dark-violet text-[1.75rem] leading-9 
