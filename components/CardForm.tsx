@@ -141,7 +141,7 @@ export default function CardForm({
             setCardNumber={setCardNumber}
             cardNumberError={cardNumberError}
           />
-          <div className="flex w-full items-end lg:gap-[1.25rem] gap-[11px]">
+          <div className="flex w-full lg:gap-[1.25rem] gap-[11px]">
             <CardExpiryInput
               cardExpiryMM={cardExpiryMM}
               setCardExpiryMM={setCardExpiryMM}
