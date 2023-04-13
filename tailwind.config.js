@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        "grid-card-template": "minmax(1rem, 11.4%) 33.8rem minmax(1rem, 8.8%) auto minmax(1rem, 10%)"
+        "grid-card-template": "minmax(1rem, 11.4%) 33.8rem minmax(1rem, 8.8%) 385px minmax(1rem, 10%)"
       },
       gridTemplateRows: {
         "mobile-grid-template" : "310px auto",
